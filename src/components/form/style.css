@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400|Lora");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400|Lora');
 body {
   background: rgba(192, 213, 255, 1);
 }
@@ -38,7 +38,8 @@ body {
   transition: all 0.5s ease;
 }
 
-.leftbox, .rightbox {
+.leftbox,
+.rightbox {
   position: absolute;
   width: 50%;
   transition: 1s all ease;
@@ -53,7 +54,7 @@ body {
 }
 
 h1 {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-align: center;
   margin-top: 95px;
   text-transform: uppercase;
@@ -63,8 +64,8 @@ h1 {
 }
 
 .title {
-  font-family: "Lora", serif;
-  color: #8E9AAF;
+  font-family: 'Lora', serif;
+  color: #8e9aaf;
   font-size: 1.8em;
   line-height: 1.1em;
   letter-spacing: 3px;
@@ -83,7 +84,7 @@ h1 {
 }
 
 p {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 0.7em;
   letter-spacing: 2px;
   color: rgba(23, 99, 255, 1);
@@ -113,7 +114,7 @@ span {
 
 button {
   padding: 12px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
   letter-spacing: 3px;
   font-size: 11px;
@@ -123,7 +124,7 @@ button {
   display: block;
 }
 button:hover {
-  background: #EAC7CC;
+  background: #eac7cc;
   color: #f6f6f6;
   transition: background-color 1s ease-out;
 }
@@ -132,7 +133,7 @@ button:hover {
   margin-top: 3%;
   background: #f6f6f6;
   color: #ce7d88;
-  border: solid 1px #EAC7CC;
+  border: solid 1px #eac7cc;
 }
 
 /* form styling */
@@ -159,7 +160,7 @@ form {
   border-color: #ce7d88;
 }
 .submit:hover {
-  background: #CBC0D3;
+  background: #cbc0d3;
   border-color: #bfb1c9;
 }
 
@@ -190,7 +191,7 @@ input:focus::placeholder {
 }
 
 label {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #ce7d88;
   font-size: 0.8em;
   letter-spacing: 1px;
@@ -204,12 +205,12 @@ label {
   top: 5px;
 }
 
-input[type=checkbox] {
+input[type='checkbox'] {
   width: 7px;
   background: #ce7d88;
 }
 
-.checkbox input[type=checkbox]:checked + label {
+.checkbox input[type='checkbox']:checked + label {
   color: #ce7d88;
   transition: 0.5s all ease;
 }
