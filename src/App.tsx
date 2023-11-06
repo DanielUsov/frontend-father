@@ -1,10 +1,13 @@
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AuthForm from './components/form/Form';
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <h1>Vite + React</h1>
+        <Routes>
+          <Route path="/" element={<AuthForm />} />
+        </Routes>
       </BrowserRouter>
     </>
   );
