@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400|Lora');
 body {
-  background: rgba(192, 213, 255, 1);
+  /* background: rgba(192, 213, 255, 1); */
 }
 
 .container {
@@ -124,7 +124,7 @@ button {
   display: block;
 }
 button:hover {
-  background: #eac7cc;
+  /* background: #eac7cc; */
   color: #f6f6f6;
   transition: background-color 1s ease-out;
 }
