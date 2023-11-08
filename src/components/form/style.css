@@ -53,7 +53,7 @@ body {
   right: -2%;
 }
 
-h1 {
+.welcome h1 {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
   margin-top: 95px;
