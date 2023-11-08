@@ -4,6 +4,7 @@ import Category from '../../components/card/category';
 import Card from '../../components/card/Card';
 import Header from '../../components/header/header';
 import CardDetails from '../../components/card/CardDetails';
+import Goals from '../../components/goal/goals';
 
 import './style.css'
 
@@ -14,6 +15,12 @@ interface CardProps {
     deadline: string;
     description: string;
     document: string;
+}
+
+interface GoalProps {
+    title: string;
+    completedTasks: number;
+    totalTasks: number;
 }
 
 const mainPage: React.FC = () => {
@@ -36,6 +43,12 @@ const mainPage: React.FC = () => {
         ]
     };
 
+    const goals: GoalProps[] = [
+        { title: 'Провести встречу с HR после первой недели', completedTasks: 0, totalTasks: 1 },
+        { title: 'Пройти 10 курсов за 3 дня', completedTasks: 6, totalTasks: 10 },
+        // Добавьте свои цели здесь
+    ];
+
     const [selectedCategory, setSelectedCategory] = useState('Текущие');
     const [selectedCard, setSelectedCard] = useState<CardProps | null>(null);
 
@@ -44,7 +57,8 @@ const mainPage: React.FC = () => {
     return (
         <>
         < Header />
-   
+        <div className="our-block">
+        <Goals goals={goals} />
         <div className='card-container'>
         <div className="category-title">
             <h1>Образовательные курсы</h1>
@@ -71,6 +85,7 @@ const mainPage: React.FC = () => {
                     ))
                 )}
             </div>
+        </div>
         </div>
         </>
     );

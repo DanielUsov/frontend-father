@@ -8,6 +8,7 @@ interface CategoryProps {
 
 const Category: React.FC<CategoryProps> = ({ category, isSelected, onSelect }) => {
     return (
+      
         <div
             id={category}
             className={`category-item ${isSelected ? 'selected' : ''}`}
