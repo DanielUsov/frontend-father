@@ -1,8 +1,25 @@
 import { useState } from 'react';
+import { useLoginMutation } from '../../__data__/services/auth';
+import { useFormSelect } from '../../hooks/formSelect';
 import './style.css';
+import { objectIsEmptyCheck } from '../../utils/objectIsEmpty';
+import { useNavigate } from 'react-router-dom';
 
 const AuthForm = () => {
+  const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
+  const [login, { data }] = useLoginMutation();
+  const { selectData, updateField } = useFormSelect({
+    username: '',
+    password: '',
+  });
+
+  const handleSubmit = async () => {
+    if (objectIsEmptyCheck(selectData, ['username', 'password'])) {
+      await login(selectData);
+      if (data) navigate('main');
+    }
+  };
 
   const handleLogin = () => {
     setIsLogin(true);
@@ -35,13 +52,29 @@ const AuthForm = () => {
             <div className="signin">
               <h1>sign in</h1>
               <form className="more-padding" autoComplete="off">
-                <input type="text" placeholder="username" />
-                <input type="password" placeholder="password" />
+                <input
+                  type="text"
+                  placeholder="username"
+                  value={selectData.username}
+                  onChange={(e) => updateField('username', e.target.value)}
+                />
+                <input
+                  type="password"
+                  placeholder="password"
+                  value={selectData.password}
+                  onChange={(e) => updateField('password', e.target.value)}
+                />
                 <div className="checkbox">
                   <input type="checkbox" id="remember" />
                   <label htmlFor="remember">remember me</label>
                 </div>
-                <button className="button submit">login</button>
+                <button
+                  className="button submit"
+                  type="button"
+                  onClick={handleSubmit}
+                >
+                  login
+                </button>
               </form>
             </div>
           )}

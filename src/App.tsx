@@ -7,8 +7,11 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/login" element={<AuthForm />} />
+          <Route path="/">
+            <Route index element={<AuthForm />} />
+            <Route path="main" element={<MainPage />} />
+            <Route path="login" element={<AuthForm />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
