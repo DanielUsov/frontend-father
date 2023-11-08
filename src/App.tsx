@@ -6,7 +6,10 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<AuthForm />} />
+          <Route path="/">
+            <Route index element={<AuthForm />} />
+            <Route path="main" element={<></>} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
