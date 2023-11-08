@@ -1,0 +1,35 @@
+.goals {
+    width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    color: #1763FF;
+}
+.goal {
+    margin-bottom: 20px;
+}
+.goal-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.goal-progress {
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.goal-progress-bar {
+  background-color: #ccd0cc;
+border-radius: 10px;
+border: 0.1px #1763FF solid;
+height: 90%;
+}
+.goal-progress-text {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0 5px;
+    font-size: 14px;
+    line-height: 20px;
+}
