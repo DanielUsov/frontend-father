@@ -5,7 +5,8 @@ import Card from '../../components/card/Card';
 import Header from '../../components/header/header';
 import CardDetails from '../../components/card/CardDetails';
 import Goals from '../../components/goal/goals';
-
+import Sidebar from '../../components/document/Sidebar';
+import FAQ from '../../components/document/FAQ';
 import './style.css'
 
 interface CardProps {
@@ -21,6 +22,11 @@ interface GoalProps {
     title: string;
     completedTasks: number;
     totalTasks: number;
+}
+
+interface SectionProps {
+    title: string;
+    items: string[];
 }
 
 const mainPage: React.FC = () => {
@@ -46,8 +52,25 @@ const mainPage: React.FC = () => {
     const goals: GoalProps[] = [
         { title: 'Провести встречу с HR после первой недели', completedTasks: 0, totalTasks: 1 },
         { title: 'Пройти 10 курсов за 3 дня', completedTasks: 6, totalTasks: 10 },
-        // Добавьте свои цели здесь
     ];
+
+    const [selectedQuestion, setSelectedQuestion] = useState('');
+    const [showCards, setShowCards] = useState(true);
+
+    const sections: SectionProps[] = [
+        { title: 'Важные документы', items: ['Документ 1', 'Документ 2', 'Документ 3'] },
+        { title: 'FAQ', items: ['Вопрос 1', 'Вопрос 2', 'Вопрос 3'] },
+    ];
+
+    
+    const handleQuestionClick = (question: string) => {
+        setSelectedQuestion(question);
+        setShowCards(false);
+    };
+
+    const handleBackClick = () => {
+        setShowCards(true);
+    };
 
     const [selectedCategory, setSelectedCategory] = useState('Текущие');
     const [selectedCard, setSelectedCard] = useState<CardProps | null>(null);
@@ -58,7 +81,11 @@ const mainPage: React.FC = () => {
         <>
         < Header />
         <div className="our-block">
+            <div className="sector-left">
         <Goals goals={goals} />
+        <Sidebar sections={sections} onQuestionClick={handleQuestionClick}/>
+        </div>
+        {showCards ? (
         <div className='card-container'>
         <div className="category-title">
             <h1>Образовательные курсы</h1>
@@ -85,7 +112,14 @@ const mainPage: React.FC = () => {
                     ))
                 )}
             </div>
+            
         </div>
+                    ) : (
+                        <>
+                        <FAQ question={selectedQuestion} answer="Ответ на выбранный вопрос" />
+                        <button onClick={handleBackClick}>Назад</button>
+                        </>
+                    )}
         </div>
         </>
     );
