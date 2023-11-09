@@ -30,90 +30,31 @@ const AuthForm = () => {
   };
 
   return (
-    <div className="container">
-      <div className="welcome">
-        <div
-          className="pinkbox"
-          style={{ transform: isLogin ? 'translateX(0%)' : 'translateX(80%)' }}
-        >
-          {!isLogin && (
-            <div className="signup">
-              <h1>register</h1>
-              <form autoComplete="off">
-                <input type="text" placeholder="username" />
-                <input type="email" placeholder="email" />
-                <input type="number" placeholder="phone" />
-                <input type="password" placeholder="password" />
-                <button className="button submit">create account</button>
-              </form>
-            </div>
-          )}
-          {isLogin && (
-            <div className="signin">
-              <h1>sign in</h1>
-              <form className="more-padding" autoComplete="off">
-                <input
-                  type="text"
-                  placeholder="username"
-                  value={selectData.username}
-                  onChange={(e) => updateField('username', e.target.value)}
-                />
-                <input
-                  type="password"
-                  placeholder="password"
-                  value={selectData.password}
-                  onChange={(e) => updateField('password', e.target.value)}
-                />
-                <div className="checkbox">
-                  <input type="checkbox" id="remember" />
-                  <label htmlFor="remember">remember me</label>
-                </div>
-                <button
-                  className="button submit"
-                  type="button"
-                  onClick={handleSubmit}
-                >
-                  login
-                </button>
-              </form>
-            </div>
-          )}
-        </div>
-        <div className="leftbox">
-          <h2 className="title">
-            <span>FRONTEND</span>&<br />
-            FATHER
-          </h2>
-          <p className="desc">
-            A team of the best <span>developers</span>
-          </p>
-          <img
-            className="flower smaller"
-            src="Ellipse43.svg"
-            alt="1357d638624297b"
+    <div className="login-container">
+      <div className="login-card">
+        <h2 className="login-title">Вход на платформу</h2>
+        <form className="login-form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            className="login-input"
+            placeholder="логин"
+            value={selectData.username}
+            onChange={(e) => updateField('username', e.target.value)}
           />
-          <p className="account">have an account?</p>
-          <button className="button" id="signin" onClick={handleLogin}>
-            login
-          </button>
-        </div>
-        <div className="rightbox">
-          <h2 className="title">
-            <span>FRONTEND</span>&<br />
-            FATHER
-          </h2>
-          <p className="desc">
-            A team of the best <span>developers</span>
-          </p>
-          <img className="flower" src="Ellipse43.svg" />
-          <p className="account">don't have an account?</p>
-          <button className="button" id="signup" onClick={handleRegister}>
-            sign up
-          </button>
-        </div>
+          <input
+            type="password"
+            className="login-input"
+            placeholder="пароль"
+            value={selectData.password}
+            onChange={(e) => updateField('password', e.target.value)}
+          />
+          <button type="submit" className="login-button" onClick={handleLogin}>Войти</button>
+          <a href="#" className="register-link" onClick={handleRegister}>Зарегистрироваться</a>
+        </form>
       </div>
     </div>
   );
-};
+}
 
 export default AuthForm;
+

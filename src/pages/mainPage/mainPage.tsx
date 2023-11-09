@@ -1,4 +1,3 @@
-// App.tsx
 import React, { useState } from 'react';
 import Category from '../../components/card/category';
 import Card from '../../components/card/Card';
