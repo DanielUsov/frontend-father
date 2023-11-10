@@ -93,25 +93,8 @@ export const MainPage = () => {
     ],
   };
 
-  const goals: GoalProps[] = [
-    {
-      title: 'Провести встречу с HR после первой недели',
-      completedTasks: 0,
-      totalTasks: 1,
-    },
-    { title: 'Пройти 10 курсов за 3 дня', completedTasks: 6, totalTasks: 10 },
-  ];
-
   const [selectedQuestion, setSelectedQuestion] = useState('');
   const [showCards, setShowCards] = useState(true);
-
-  const sections: SectionProps[] = [
-    {
-      title: 'Важные документы',
-      items: ['Документ 1', 'Документ 2', 'Документ 3'],
-    },
-    { title: 'FAQ', items: ['Вопрос 1', 'Вопрос 2', 'Вопрос 3'] },
-  ];
 
   const handleQuestionClick = (question: string) => {
     setSelectedQuestion(question);

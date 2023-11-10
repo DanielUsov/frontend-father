@@ -4,6 +4,7 @@ import { MainWrapper } from './components/main-wrapper';
 import AdminPage from './pages/adminPage/adminPage';
 import { ImportantDocuments } from './pages/important-documents';
 import { MainPage } from './pages/mainPage/mainPage';
+import { PrivateRoute } from './components/private-route';
 
 function App() {
   return (
@@ -14,17 +15,46 @@ function App() {
             <Route index element={<AuthForm />} />
             <Route
               path="main"
-              element={<MainWrapper children={<MainPage />} />}
+              element={
+                <PrivateRoute
+                  element={<MainWrapper children={<MainPage />} />}
+                />
+              }
             />
             <Route
               path="important-document/:documentID"
-              element={<MainWrapper children={<ImportantDocuments />} />}
+              element={
+                <PrivateRoute
+                  element={<MainWrapper children={<ImportantDocuments />} />}
+                />
+              }
             />
-            <Route path="admin" element={<AdminPage />} />
+            <Route
+              path="admin"
+              element={
+                <PrivateRoute
+                  element={<MainWrapper children={<ImportantDocuments />} />}
+                />
+              }
+            />
+            <Route path="dev">
+              <Route
+                path="main"
+                element={<MainWrapper children={<MainPage />} />}
+              />
+              <Route
+                path="important-document/:documentID"
+                element={<MainWrapper children={<ImportantDocuments />} />}
+              />
+              <Route
+                path="admin"
+                element={<MainWrapper children={<ImportantDocuments />} />}
+              />
+            </Route>
             <Route path="login" element={<AuthForm />} />
           </Route>
         </Routes>
-      </BrowserRouter>  
+      </BrowserRouter>
     </>
   );
 }
