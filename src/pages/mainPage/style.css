@@ -9,19 +9,31 @@ html {
   /* max-width: 1440px; */
 }
 
+.cards__cont {
+  width: 50%;
+}
+
 .card-container {
   max-width: 900px;
   width: 90%;
   /* margin: 0 auto; */
   background-color: #fff;
   border-radius: 20px;
-  padding: 20px 0;
   float: right;
   margin-right: 40px;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
 }
 
 .category-title {
   padding: 20px 0 40px 40px;
+}
+
+.ended-cards-title {
+  padding: 10px 0px 10px 40px;
+  background-color: #fe4b18;
+  border-radius: 20px 20px 0px 0px;
+  margin-bottom: 20px;
 }
 
 .band {
@@ -147,18 +159,18 @@ html {
   cursor: pointer;
 }
 .category .selected {
-    border-bottom: 2px solid blue;
+  border-bottom: 2px solid blue;
 }
 
 .select__btn {
-    height: 30px;
-    border: 2px solid blue;
-    border-radius: 20px;
-    background-color: #fff;
-    padding: 0 10px;
+  height: 30px;
+  border: 2px solid blue;
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 0 10px;
 }
 
 .select__btn:hover {
-    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
-    border-bottom: 2px solid blue;   
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid blue;
 }

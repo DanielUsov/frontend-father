@@ -4,6 +4,7 @@ import CardDetails from '../../components/card/CardDetails';
 import Category from '../../components/card/category';
 import FAQ from '../../components/document/FAQ';
 import './style.css';
+import { useNavigate } from 'react-router-dom';
 
 export interface CardProps {
   title: string;
@@ -26,6 +27,8 @@ export interface SectionProps {
 }
 
 export const MainPage = () => {
+  const navigate = useNavigate();
+  const [isCard, setIsCard] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('Текущие');
   const [selectedCard, setSelectedCard] = useState<CardProps | null>(null);
   const categories = ['Текущие', 'Просроченные', 'Предстоящие'];
@@ -102,7 +105,7 @@ export const MainPage = () => {
   };
 
   const handleBackClick = () => {
-    setShowCards(true);
+    navigate(-1);
   };
 
   // const [selectedCategory, setSelectedCategory] = useState('Текущие');
@@ -110,38 +113,61 @@ export const MainPage = () => {
   return (
     <>
       {showCards ? (
-        <div className="card-container">
-          <div className="category-title">
-            <h1>Образовательные курсы</h1>
-          </div>
-          <div className="category">
-            {categories.map((category) => (
-              <Category
-                key={category}
-                category={category}
-                isSelected={selectedCategory === category}
-                onSelect={() => {
-                  setSelectedCategory(category);
-                  setSelectedCard(null);
-                }}
-              />
-            ))}
-          </div>
-          <div className="band">
-            {selectedCard ? (
-              <CardDetails
-                card={selectedCard}
-                onBack={() => setSelectedCard(null)}
-              />
-            ) : (
-              cards[selectedCategory].map((card, index) => (
-                <Card
-                  key={index}
-                  card={card}
-                  onSelect={() => setSelectedCard(card)}
+        <div className="cards__cont">
+          <div className="card-container">
+            <div className="category-title">
+              <h1>Образовательные курсы</h1>
+            </div>
+            <div className="category">
+              {categories.map((category) => (
+                <Category
+                  key={category}
+                  category={category}
+                  isSelected={selectedCategory === category}
+                  onSelect={() => {
+                    setSelectedCategory(category);
+                    setSelectedCard(null);
+                  }}
                 />
-              ))
-            )}
+              ))}
+            </div>
+            <div className="band">
+              {selectedCard ? (
+                <CardDetails
+                  card={selectedCard}
+                  onBack={() => setSelectedCard(null)}
+                />
+              ) : (
+                cards[selectedCategory].map((card, index) => (
+                  <Card
+                    key={index}
+                    card={card}
+                    onSelect={() => setSelectedCard(card)}
+                  />
+                ))
+              )}
+            </div>
+          </div>
+          <div className="card-container">
+            <div className="ended-cards-title">
+              <h1 style={{ color: 'white' }}>Посмотреть пройденные курсы</h1>
+            </div>
+            <div className="band">
+              {selectedCard ? (
+                <CardDetails
+                  card={selectedCard}
+                  onBack={() => setSelectedCard(null)}
+                />
+              ) : (
+                cards[selectedCategory].map((card, index) => (
+                  <Card
+                    key={index}
+                    card={card}
+                    onSelect={() => setSelectedCard(card)}
+                  />
+                ))
+              )}
+            </div>
           </div>
         </div>
       ) : (
