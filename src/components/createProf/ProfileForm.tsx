@@ -6,7 +6,7 @@ const ProfileForm: React.FC = () => {
   return (
     <div id="prof-section">
       <h2 onClick={() => setFormVisible(!isFormVisible)}>
-        Создание образовательного курса
+      Создать новую учетную запись
       </h2>
       {isFormVisible && (
         <>
