@@ -9,23 +9,39 @@ const CourseForm: React.FC = () => {
         Создание образовательного курса
       </h2>
       {isFormVisible && (
-        <div id="course-form" className="course-form">
+        <form id="course-form" className="course-form">
           <label htmlFor="course-name">Название курса:</label>
-          <input type="text" id="course-name" />
-          <label htmlFor="course-category">Категория курса:</label>
-          <input type="checkbox" id="course-category" />
+          <input type="text" id="course-name" placeholder='|Текст'/>
           <label htmlFor="course-description">Описание курса:</label>
-          <textarea id="course-description"></textarea>
-          <label htmlFor="employee-name">ФИО работника:</label>
-          <input type="text" id="employee-name" />
+          <textarea id="course-description" placeholder='|Текст'></textarea>
+          <label className='ll__1' htmlFor="form__contain">Кому назначить курс</label>
+<div id="form__contain">
+        <div className="check__cont">
+          <div className="check__for">
           <input type="checkbox" id="assign-all" />{' '}
           <label htmlFor="assign-all">Назначить всем сотрудникам</label>
-          <label htmlFor="employee-position">Должность:</label>
-          <input type="text" id="employee-position" />
-          <label htmlFor="work-format">Формат работы:</label>
-          <input type="text" id="work-format" />
-          <button id="create-button">Создать</button>
-        </div>
+          </div>
+          <div className="check__for">
+          <input type="checkbox" id="assign-all" />{' '}
+          <label htmlFor="assign-all">Назначить по должности</label>
+          </div>
+          <div className="check__for">
+          <input type="checkbox" id="assign-all" />{' '}
+          <label htmlFor="assign-all">Назначить индивидуально</label>
+          </div>
+          </div>
+          <div className="fio_cont">
+          <label htmlFor="employee-name">ФИО работника:</label>
+          <input type="text" id="employee-name" placeholder='|Петр Петрович'/>
+          <label htmlFor="course-variant">Выбранные сотрудники</label>
+          <div id="course-variant" placeholder='|Текст'></div>
+          </div>
+          </div>
+          <div className="btn__cor">
+          <button id="load-button">Загрузить документ</button>
+          <button id="create-button">Создать курс</button>
+          </div>
+        </form>
       )}
     </div>
   );
