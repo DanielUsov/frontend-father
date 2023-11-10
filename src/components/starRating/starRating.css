@@ -1,0 +1,63 @@
+.star-rating {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+}
+.star-rating input[type="radio"] {
+    display: none;
+}
+.star-rating label {
+    cursor: pointer;
+    color: #ccc;
+}
+.star-rating input[type="radio"]:checked ~ label,
+.star-rating label:hover ~ input[type="radio"]:checked ~ label,
+.star-rating input[type="radio"]:checked + label:hover,
+.star-rating input[type="radio"]:checked ~ label:hover,
+.star-rating label:hover ~ input[type="radio"]:not(:checked) ~ label,
+.star-rating input[type="radio"]:not(:checked) ~ label:hover ~ label {
+    color: orange;
+}
+.comment-section {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+.comment-section button {
+    background-color: orange;
+    border: none;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+.star-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+#comments {
+    /* box-shadow: 0 0 2px 4px; */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25) inset;
+    border-radius: 30px;
+    width: 450px;
+    height: 180px;
+    padding: 20px;
+}
+.rat__btn {
+    width: 220px;
+    height: 60px;
+    background: #FE4B18; 
+    border: #FE4B18;
+    border-radius: 30px;
+    color: #fff;
+}
+.rat__btn:hover {
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25) inset;
+}
+
+.rating__rating {
+max-width: 400px;
+}
