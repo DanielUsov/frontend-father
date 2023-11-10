@@ -1,0 +1,7 @@
+.our-block {
+  display: flex;
+  gap: 30px;
+  margin-top: 80px;
+  margin-left: 80px;
+  justify-content: center;
+}

@@ -1,15 +1,11 @@
 import React from 'react';
 
 interface ItemProps {
-    item: string;
+  item: string;
 }
 
 const Item: React.FC<ItemProps> = ({ item }) => {
-    return (
-        <div className="item">
-            {item}
-        </div>
-    );
+  return <div className="item">{item}</div>;
 };
 
 export default Item;
