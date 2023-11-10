@@ -33,7 +33,7 @@ function App() {
               path="admin"
               element={
                 <PrivateRoute
-                  element={<MainWrapper children={<ImportantDocuments />} />}
+                  element={<MainWrapper children={<AdminPage />} />}
                 />
               }
             />
@@ -48,7 +48,7 @@ function App() {
               />
               <Route
                 path="admin"
-                element={<MainWrapper children={<ImportantDocuments />} />}
+                element={<MainWrapper children={<AdminPage />} />}
               />
             </Route>
             <Route path="login" element={<AuthForm />} />
