@@ -7,33 +7,25 @@ import { useNavigate } from 'react-router-dom';
 
 const AuthForm = () => {
   const navigate = useNavigate();
-  const [isLogin, setIsLogin] = useState(true);
   const [login, { data }] = useLoginMutation();
   const { selectData, updateField } = useFormSelect({
     username: '',
     password: '',
   });
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
     if (objectIsEmptyCheck(selectData, ['username', 'password'])) {
       await login(selectData);
       if (data) navigate('main');
     }
   };
 
-  const handleLogin = () => {
-    setIsLogin(true);
-  };
-
-  const handleRegister = () => {
-    setIsLogin(false);
-  };
-
   return (
     <div className="login-container">
       <div className="login-card">
         <h2 className="login-title">Вход на платформу</h2>
-        <form className="login-form" onSubmit={handleSubmit}>
+        <form className="login-form">
           <input
             type="text"
             className="login-input"
@@ -48,13 +40,13 @@ const AuthForm = () => {
             value={selectData.password}
             onChange={(e) => updateField('password', e.target.value)}
           />
-          <button type="submit" className="login-button" onClick={handleLogin}>Войти</button>
-          {/* <a href="#" className="register-link" onClick={handleRegister}>Зарегистрироваться</a> */}
+          <button type="submit" className="login-button" onClick={handleSubmit}>
+            Войти
+          </button>
         </form>
       </div>
     </div>
   );
-}
+};
 
 export default AuthForm;
-
