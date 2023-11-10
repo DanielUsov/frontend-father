@@ -31,11 +31,7 @@ function App() {
             />
             <Route
               path="admin"
-              element={
-                <PrivateRoute
-                  element={<MainWrapper children={<AdminPage />} />}
-                />
-              }
+              element={<PrivateRoute element={<AdminPage />} />}
             />
             <Route path="dev">
               <Route
@@ -46,10 +42,7 @@ function App() {
                 path="important-document/:documentID"
                 element={<MainWrapper children={<ImportantDocuments />} />}
               />
-              <Route
-                path="admin"
-                element={<MainWrapper children={<AdminPage />} />}
-              />
+              <Route path="admin" element={<AdminPage />} />
             </Route>
             <Route path="login" element={<AuthForm />} />
           </Route>
