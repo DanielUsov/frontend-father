@@ -116,7 +116,7 @@ const mainPage: React.FC = () => {
                     ) : (
                         <>
                         <FAQ question={selectedQuestion} answer="Ответ на выбранный вопрос" />
-                        <button onClick={handleBackClick}>Назад</button>
+                        <button className='select__btn' onClick={handleBackClick}>Назад</button>
                         </>
                     )}
         </div>

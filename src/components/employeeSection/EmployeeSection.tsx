@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
-import Employee from './Employee';
+import EmployeeCard from './EmployeeCard';
 import FilterForm from './FilterForm';
+import EmployeeProfile from '../employeeProfile/EmployeeProfile';
 import './employeeSection.css'
 
 type EmployeeData = {
     name: string;
     position: string;
     img: string;
+    email: string;
+    phone: string;
 };
 
 const employees: EmployeeData[] = [
-    {name: "Иван Иванов", position: "Менеджер", img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/flex-4.jpg"},
-    {name: "Петр Петров", position: "Дизайнер", img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/flex-4.jpg"},
-    {name: "Сергей Сергеев", position: "Разработчик", img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/flex-4.jpg"}
+    {name: "Иван Иванов", position: "Менеджер", img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/flex-4.jpg", email: "ivanov@example.com", phone: "+1234567890"},
+    {name: "Петр Петров", position: "Дизайнер", img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/flex-4.jpg", email: "ivanov@example.com", phone: "+1234567890"},
+    {name: "Сергей Сергеев", position: "Разработчик", img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/flex-4.jpg", email: "ivanov@example.com", phone: "+1234567890"}
 ];
 
 const EmployeeSection: React.FC = () => {
     const [isFilterVisible, setFilterVisible] = useState(false);
+    const [selectedEmployee, setSelectedEmployee] = useState<EmployeeData | null>(null);
 
     return (
         <div id="employee-section">
@@ -26,10 +30,16 @@ const EmployeeSection: React.FC = () => {
                 {isFilterVisible ? 'Скрыть фильтр' : 'Показать фильтр'}
             </button>
             </div>
-            {isFilterVisible && <FilterForm />}
-            {employees.map((employee, index) => (
-                <Employee key={index} {...employee} />
-            ))}
+            {selectedEmployee ? (
+                <EmployeeProfile {...selectedEmployee} />
+            ) : (
+                <>
+                    {isFilterVisible && <FilterForm />}
+                    {employees.map((employee, index) => (
+                        <EmployeeCard key={index} {...employee} onClick={() => setSelectedEmployee(employee)} />
+                    ))}
+                </>
+            )}
         </div>
     );
 };

@@ -157,3 +157,16 @@ html {
 .category .selected {
     border-bottom: 2px solid blue;
 }
+
+.select__btn {
+    height: 30px;
+    border: 2px solid blue;
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 0 10px;
+}
+
+.select__btn:hover {
+    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+    
+}

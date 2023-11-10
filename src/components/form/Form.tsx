@@ -49,7 +49,7 @@ const AuthForm = () => {
             onChange={(e) => updateField('password', e.target.value)}
           />
           <button type="submit" className="login-button" onClick={handleLogin}>Войти</button>
-          <a href="#" className="register-link" onClick={handleRegister}>Зарегистрироваться</a>
+          {/* <a href="#" className="register-link" onClick={handleRegister}>Зарегистрироваться</a> */}
         </form>
       </div>
     </div>

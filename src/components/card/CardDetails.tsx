@@ -1,4 +1,5 @@
 import React from 'react';
+import StarRating from '../starRating/StarRating';
 
 interface CardDetailsProps {
     card: {
@@ -20,7 +21,8 @@ const CardDetails: React.FC<CardDetailsProps> = ({ card, onBack }) => {
             <p>Дедлайн: {card.deadline}</p>
             <p>{card.description}</p>
             <a href={card.document} download>Скачать документ</a>
-            <button className="submit-button">Отправить</button>
+            < StarRating />
+            {/* <button className="submit-button">Отправить</button> */}
         </div>
     );
 };
