@@ -6,10 +6,18 @@ export const authApi = createApi({
   endpoints: (builder) => ({
     login: builder.mutation<any, { username: string; password: string }>({
       query: (loginData) => ({
-        url: '/auth/login',
+        url: '/api/v1/auth/login',
         method: 'POST',
-        body: loginData,
+        body: {
+          login: loginData.username,
+          possword: loginData.password,
+        },
       }),
+      transformResponse: (response: any) => {
+        localStorage.setItem('token', response?.access_token);
+        localStorage.setItem('auth', 'true');
+        return response;
+      },
     }),
   }),
 });
