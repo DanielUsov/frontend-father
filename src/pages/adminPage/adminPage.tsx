@@ -9,7 +9,7 @@ const AdminPage: React.FC = () => {
   return (
     <>
       <Header />
-    <ProfileForm />
+      <ProfileForm />
       <EmployeeSection />
       <CourseForm />
     </>
