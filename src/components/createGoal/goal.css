@@ -87,9 +87,10 @@
   border-radius: 30px;
 }
 
-.btn__cor {
+.btn__cors {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
 }
 #load-button {
  color: white;
@@ -102,14 +103,14 @@
   box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
-#create-button {
+#create-buttone {
   color: white;
   background: #FE4B18; 
   box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.25);
   border-radius: 50px; 
   padding: 10px 52px;
 }
-#create-button:hover {
+#create-buttone:hover {
   box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -122,6 +123,7 @@
 }
 .course-form label {
   display: block;
+  font-weight: bold;
   margin-top: 20px;
 }
 .course-form button {
