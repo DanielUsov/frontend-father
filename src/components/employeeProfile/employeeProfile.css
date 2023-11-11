@@ -21,7 +21,8 @@
 
 .action-card {
     position: relative;
-    background: linear-gradient(180deg, rgba(254, 75, 24, 0.80) 0%, rgba(217, 217, 217, 0) 100%, rgba(254, 75, 24, 0.30) 100%), url('Pin.svg') no-repeat right 10% top 10%;
+    cursor: pointer;
+    background: linear-gradient(180deg, rgba(254, 75, 24, 0.80) 0%, rgba(217, 217, 217, 0) 100%, rgba(254, 75, 24, 0.30) 100%), url('../../../public/Pin.svg') no-repeat right 10% top 10%;
     width: 200px;
     height: 160px;
     border-radius: 30px;

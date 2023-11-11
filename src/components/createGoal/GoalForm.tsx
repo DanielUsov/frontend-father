@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
 import MultipleSelectCheckmarks from '../iuLib/InputBox';
-import './course.css';
-const CourseForm: React.FC = () => {
+import './goal.css';
+const GoalForm: React.FC = () => {
   const [isFormVisible, setFormVisible] = useState(false);
 
   return (
     <div id="course-section">
       <h2 onClick={() => setFormVisible(!isFormVisible)}>
-        Создание образовательного курса
-        <img src="/Edit.svg" alt="" />
+      Поставить цель
+      <img src="/Check.svg" alt="" />
+
       </h2>
       {isFormVisible && (
         <form id="course-form" className="course-form">
-          <label htmlFor="course-name">Название курса:</label>
-          <input type="text" id="course-name" placeholder='|Текст'/>
-          <label htmlFor="course-description">Описание курса:</label>
+          <label htmlFor="course-name">Название цели:</label>
+          <MultipleSelectCheckmarks />
+          <label htmlFor="course-description">Описание цели:</label>
           <textarea id="course-description" placeholder='|Текст'></textarea>
-          <label className='ll__1' htmlFor="form__contain">Кому назначить курс</label>
+          <label className='ll__1' htmlFor="form__contain">Кому назначить цель</label>
 <div id="form__contain">
         <div className="check__cont">
           <div className="check__for">
@@ -40,9 +41,9 @@ const CourseForm: React.FC = () => {
           <div id="course-variant" placeholder='|Текст'></div> */}
           </div>
           </div>
-          <div className="btn__cor">
-          <button id="load-button">Загрузить документ</button>
-          <button id="create-button">Создать курс</button>
+          <div className="btn__cors">
+          {/* <button id="load-button">Загрузить документ</button> */}
+          <button id="create-buttone">Создать цель</button>
           </div>
         </form>
       )}
@@ -50,4 +51,4 @@ const CourseForm: React.FC = () => {
   );
 };
 
-export default CourseForm;
+export default GoalForm;

@@ -70,6 +70,17 @@ html {
   padding: 20px;
 }
 
+.back-button:hover {
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
+
+}
+
+.back-button {
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
 .card .thumb {
   padding-top: 60%;
   background-size: cover;
