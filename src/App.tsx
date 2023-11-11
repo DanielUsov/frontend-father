@@ -5,8 +5,12 @@ import AdminPage from './pages/adminPage/adminPage';
 import { ImportantDocuments } from './pages/important-documents';
 import { MainPage } from './pages/mainPage/mainPage';
 import { PrivateRoute } from './components/private-route';
+import { useTestgetQuery } from './__data__/services/role';
 
 function App() {
+  const { data, error } = useTestgetQuery({});
+  console.log(data);
+
   return (
     <>
       <BrowserRouter>

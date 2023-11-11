@@ -11,8 +11,8 @@ const AdminPage: React.FC = () => {
   return (
     <>
       <Header />
+      <ProfileForm />
       {/* <AdminPanel /> */}
-    <ProfileForm />
       <EmployeeSection />
       <CourseForm />
       <GoalForm />
