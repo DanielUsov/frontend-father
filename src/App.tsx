@@ -4,7 +4,6 @@ import { MainWrapper } from './components/main-wrapper';
 import AdminPage from './pages/adminPage/adminPage';
 import { ImportantDocuments } from './pages/important-documents';
 import { MainPage } from './pages/mainPage/mainPage';
-import { PrivateRoute } from './components/private-route';
 
 function App() {
   return (
@@ -12,8 +11,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/">
-            <Route index element={<AuthForm />} />
-            <Route
+            <Route index element={<MainWrapper children={<MainPage />} />} />
+            {/*<Route
               path="main"
               element={
                 <PrivateRoute
@@ -33,19 +32,19 @@ function App() {
               path="admin"
               element={<PrivateRoute element={<AdminPage />} />}
             />
-            <Route path="dev">
-              <Route
-                path="main"
-                element={<MainWrapper children={<MainPage />} />}
-              />
-              <Route
-                path="important-document/:documentID"
-                element={<MainWrapper children={<ImportantDocuments />} />}
-              />
-              <Route path="admin" element={<AdminPage />} />
-            </Route>
-            <Route path="login" element={<AuthForm />} />
+            <Route path="dev"> */}
+            <Route
+              path="main"
+              element={<MainWrapper children={<MainPage />} />}
+            />
+            <Route
+              path="important-document/:documentID"
+              element={<MainWrapper children={<ImportantDocuments />} />}
+            />
+            <Route path="admin" element={<AdminPage />} />
           </Route>
+          <Route path="login" element={<AuthForm />} />
+          {/* </Route> */}
         </Routes>
       </BrowserRouter>
     </>

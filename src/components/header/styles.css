@@ -47,12 +47,12 @@
   --trans-timing: cubic-bezier(0.65, 0, 0.35, 1);
   /* font-size: calc(20px + (40 - 20) * (100vw - 320px) / (2560 - 320)); */
 }
-body,
+/* body,
 button,
 input {
   color: var(--fg);
   font: 1em/1.5 'DM Sans', sans-serif;
-}
+} */
 
 /* .search,
 .search__icon,
