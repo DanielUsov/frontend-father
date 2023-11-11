@@ -1,0 +1,163 @@
+#analitika-section {
+  width: 90%;
+  margin: 40px auto;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.form__anal {
+
+}
+
+#analitika-form {
+  display: flex;
+}
+#analitika-section:hover {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+#analitika-section h2 {
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+  gap: 20px;
+}
+#analitika-section h2:hover {
+  color: #4caf50;
+}
+#analitika-section {
+  border-radius: 20px;
+}
+.analitika-form {
+  /* display: none; */
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+ #analitika
+-name {
+  /* display: block; */
+  width: 455px;
+  height: 62px;
+  margin-top: 10px;
+  background: #FBFBFB; 
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25) inset; 
+  border-radius: 10px;
+  padding-left: 24px;
+}
+
+#analitika-description {
+  width: 840px;
+  max-height: 90px;
+  background: #FBFBFB; 
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25) inset; 
+  border-radius: 10px;
+  padding: 20px;
+}
+
+#employee-name {
+  width: 530px;
+  height: 35px;
+  background: #FBFBFB; 
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25) inset; 
+  border-radius: 10px;
+  padding-left: 20px;
+}
+
+.check__for {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+#assign-all {
+  color: orangered;
+}
+
+.fio_cont {
+  display: block;
+}
+.ll__1 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.anal__input {
+  background: #FBFBFB; 
+  box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.25) inset; 
+  border-radius: 6px;
+}
+
+#form__c {
+  padding: 20px;
+  display: flex;
+  gap: 120px;
+}
+
+.form__a {
+  display: flex;
+}
+
+.analitika__fo {
+  display: flex;
+  gap: 20px;
+  max-height: 30px;
+}
+
+.btn__cors {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+#load-button {
+ color: white;
+ background-color: #000;
+ box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.25);
+ border-radius: 50px; 
+ padding: 10px 52px;
+}
+#load-button:hover {
+  box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+#create-buttone {
+  color: white;
+  background: #FE4B18; 
+  box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 50px; 
+  padding: 10px 52px;
+}
+#create-buttone:hover {
+  box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+#analitika-variant {
+  width: 400px;
+  height: 230px;
+  background: #FBFBFB; 
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25) inset; 
+  border-radius: 10px;
+}
+.analitika-form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.analitika-form button {
+  display: block;
+  margin-top: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.analitika-form button:hover {
+  background-color: #45a049;
+}
+
