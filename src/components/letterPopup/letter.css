@@ -1,0 +1,64 @@
+body.modal-open {
+    overflow: hidden;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.letter__pop {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.letter-popup {
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    /* max-width: 500px; */
+    width: 100%;
+    z-index: 1001;
+    margin-top: 30px;
+}
+
+
+.letter-popup h2 {
+    margin-top: 0;
+}
+
+.letter-popup textarea {
+    width: 840px;
+    border-radius: 30px;
+    height: 400px;
+    /* max-height: 90px; */
+    background: #FBFBFB;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25) inset;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.letter-popup button {
+    background-color: #FE4B18;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.letter-popup button:hover {
+    background-color: #45a049;
+}

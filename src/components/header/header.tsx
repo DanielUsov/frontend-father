@@ -13,7 +13,7 @@ const Header: React.FC = () => {
               src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/flex-4.jpg"
               alt="Profile"
             />
-            <div className="dropdown">Dropdown content...</div>
+            {/* <div className="dropdown">Dropdown content...</div> */}
           </div>
         </div>
       </div>

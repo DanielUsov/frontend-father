@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useFormSelect } from '../../hooks/formSelect';
-import './profile.css';
 import { objectIsEmptyCheck } from '../../utils/objectIsEmpty';
+import MultipleSelectCheckmarks from '../iuLib/InputBox';
+import './profile.css';
 
 const ProfileForm: React.FC = () => {
   const [isFormVisible, setFormVisible] = useState(false);
@@ -25,7 +26,7 @@ const ProfileForm: React.FC = () => {
       </h2>
       {isFormVisible && (
         <>
-          <h1>Создать новую учетную запись</h1>
+          {/* <h1>Создать новую учетную запись</h1> */}
           <div className="profile__contain">
             <div className="prof__img">
               <div className="prof__i"></div>

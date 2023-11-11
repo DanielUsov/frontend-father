@@ -48,12 +48,16 @@ const EmployeeSection: React.FC = () => {
         <h2 id="section-title">
           {isFilterVisible ? 'Подходит по фильтрам' : 'Сотрудники'}
         </h2>
-        <button
+        {/* <button
           id="filter-button"
           onClick={() => setFilterVisible(!isFilterVisible)}
         >
           {isFilterVisible ? 'Скрыть фильтр' : 'Показать фильтр'}
-        </button>
+        </button> */}
+        <div className="filt__img">
+        <img src="/Filter.svg" className='filter__ic' alt="filter" 
+        onClick={() => setFilterVisible(!isFilterVisible)} />
+      </div>
       </div>
       {selectedEmployee ? (
         <EmployeeProfile {...selectedEmployee} />
